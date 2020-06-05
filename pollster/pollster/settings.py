@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',       # adds /pollster/polls/apps.py/PollsConfig class
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
