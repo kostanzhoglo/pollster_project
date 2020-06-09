@@ -19,6 +19,6 @@ from django.urls import include, path
 
 urlpatterns = [
     # as soon as a user types 'polls/[anything]', the program will look at the file listed as the paramter in .include(parameter)
-    path('polls/'].include('polls.urls')),
+    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
