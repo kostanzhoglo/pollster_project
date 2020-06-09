@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+# include is used to bring in Another urls.py file. Like the one we created in the /polls folder.
+from django.urls import include, path
 
 urlpatterns = [
+    # as soon as a user types 'polls/[anything]', the program will look at the file listed as the paramter in .include(parameter)
+    path('polls/'].include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
