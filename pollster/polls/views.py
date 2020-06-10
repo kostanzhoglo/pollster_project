@@ -16,3 +16,11 @@ def index(request):
     # This does NOT create the template itself OR the URL needed. More work to do!
         # Inside polls folder, create a urls.py to make the URL.
     return render(request, 'polls/index.html', context)
+
+# Show specific question and choices
+def detail(request, question_id):
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+    return render(request, 'polls/results.html', { 'question': question })
